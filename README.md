@@ -80,7 +80,7 @@ This will open MCP Inspector in browser or give an URL. Copy that URL and paste 
 | Arguments | src/index.js |
 | Directory | Project Root Diroctory |
 
-**Note** *After configuring the server, connect it and open Tools. Select the desired tool from the list and perform the calculations. Examples are provided in Features section.*
+**Note** *After configuring the server, connect it and open Tools. Select the desired tool from the list and perform the calculations. Examples are provided in Tools Available section.*
 
 ### Version
 
