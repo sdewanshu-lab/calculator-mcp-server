@@ -82,6 +82,57 @@ This will open MCP Inspector in browser or give an URL. Copy that URL and paste 
 
 **Note** *After configuring the server, connect it and open Tools. Select the desired tool from the list and perform the calculations. Examples are provided in Tools Available section.*
 
+### GitHub Copilot Integration (VS Code)
+
+The Calculator MCP Server can be connected to GitHub Copilot Chat in VS Code using stdio transport.
+
+The prerequisites are:
+- Node.js and npm
+- Visual Studio Code with MCP support
+- GitHub Copilot Chat access
+- Dependencies installed using npm
+
+### Configuration
+
+Create `.vscode/mcp.js` file in project root folder 
+
+zuse the code:
+
+```json
+    {
+    "servers":{
+        "calculator-mcp":{
+            "type":"stdio",
+            "command":"node",
+            "args":[
+                "src/index.js"
+            ]
+        }
+    }
+}
+```
+
+Open the project folder in VS Code. Start `calculator-mcp` from the MCP configuration controls or the `MCP: List Servers` command. Confirm the server is running.
+
+### Testing with Copilot Chat
+
+1. Open GitHub Copilot Chat in Agent mode.
+2. Ensure the calculator MCP tools are enabled and available.
+3. Ask Copilot to invoke a calculator tool.
+4. Review the tool invocation and result.
+
+Example prompts:
+
+- `Use the Add tool from my calculator-mcp MCP server to calculate 125 + 375.` Expected result: **500**.
+- `Calculate 35% of 1,200 using my calculator MCP server. Choose the appropriate tool yourself.` Expected result: **420**.
+- `Using my calculator MCP server, calculate 25% of 840 and then add 150 to that result.` Expected result: **360**, using Percentage and Add.
+
+### Validation
+
+All five calculator tools were tested with MCP Inspector and GitHub Copilot Chat. Tests included division-by-zero handling, automatic tool selection, and sequential tool invocation.
+
+**Note:** GitHub Copilot Chat access and usage limits depend on the user's GitHub account and plan. No separate `npm start` command is needed when VS Code launches the server through the MCP configuration.
+
 ### Version
 
 1.0.0

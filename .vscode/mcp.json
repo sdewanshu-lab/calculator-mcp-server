@@ -1,0 +1,11 @@
+{
+    "servers":{
+        "calculator-mcp":{
+            "type":"stdio",
+            "command":"node",
+            "args":[
+                "src/index.js"
+            ]
+        }
+    }
+}
