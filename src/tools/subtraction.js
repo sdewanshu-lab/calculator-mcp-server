@@ -7,6 +7,12 @@ export const subtractionTool = {
         a:z.number().describe("First Number"),
         b:z.number().describe("Second Number")
     },
+    outputSchema:{
+        operation:z.string().describe("Operation performed"),
+        a:z.number().describe("First Input Number"),
+        b:z.number().describe("Second Input Number"),
+        result:z.number().describe("Difference between the first and the second number")
+    },
     handler:async ({a, b}) => {
         const result = a - b;
 
@@ -16,7 +22,13 @@ export const subtractionTool = {
                     type:"text",
                     text:`The difference between ${a} and ${b} is ${result}`
                 }
-            ]
+            ],
+            structuredContent:{
+                operation:"subtraction",
+                a,
+                b,
+                result
+            }
         }
     }
 };
