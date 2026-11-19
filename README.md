@@ -351,7 +351,7 @@ A more advanced test was performed using all five tools in a single natural-lang
 **Execution results:**
 
 | Step | Tool | Calculation | Result |
-|:----:|:----:|:-------:|:-:|:------:|
+|:----:|:----:|:-----------:|:------:|
 | 1 | Percentage | 20% of 100 | 20 |
 | 2 | Add | 20 + 10 | 30 |
 | 3 | Subtract | 30 − 2 | 28 |
